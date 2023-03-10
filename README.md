@@ -2,8 +2,6 @@
 
 # ===== Python Stub Builder =====
 
-<img align="center" src='https://cdn.discordapp.com/attachments/1037900641164611659/1059001627756998727/python_EvlOkHBWaD.png'>
-
 <h2>Vespy Grabber 2.0</h2>
 
 <h3>Disclaimer</h3>
